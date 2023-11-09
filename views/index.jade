@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(method='POST', action='/')
+    input(type='hidden', name='target_image')
+    input(type='text', name='swap_image', placeholder='Enter swap image URL', style="padding: 12px 600px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; margin-top: 6px; margin-bottom: 16px; resize: vertical; margin-right: 1rem")
+    button(type='submit', style="background-color: #4CAF50; color: white; padding: 8px 35px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 12px;") Submit
+  div
+    img(src='https://rokastudios.com/wp-content/uploads/2018/02/Denver-Headshots_Roka-Studios-1.jpg', onclick='selectTarget(this)', style="width: 500px; height: 750px;")
+    img(src='https://kylebondeson.com/wp-content/uploads/2023/03/Chicaqgo-Headshots-0258-2.jpg', onclick='selectTarget(this)', style="width: 500px; height: 750px;")
+    img(src='https://rokastudios.com/wp-content/uploads/2018/02/Denver-Headshots_Roka-Studios-29-1-682x1024.jpg', onclick='selectTarget(this)', style="width: 500px; height: 750px;")
+    img(src='https://www.themobileheadshot.com/wp-content/uploads/2023/05/TMH05162.jpg', onclick='selectTarget(this)', style="width: 500px; height: 750px;")
+  img(src=swap_image, style="padding-left: 5rem; max-height: 33%; max-width: 33%; clear: both;")
+  img(src=output, style="padding-left: 10rem; max-width: 50%; height: auto;")
+
+script(src='/path/to/main.js')
